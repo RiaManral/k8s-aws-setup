@@ -20,12 +20,12 @@ variable "availability_zone" {
 }
 
 variable "key_name" {
-  type = string
-  default= "us-east-1-key"
+  type    = string
+  default = "us-east-1-key"
 }
 
 variable "key_path" {
-  type = string
-  default= "C:\\Users\\91995\\Downloads\\k8s-us-east-key.pub"
+  type      = string
+  default   = "C:\\Users\\91995\\Downloads\\k8s-us-east-key.pub"
   sensitive = true
 }

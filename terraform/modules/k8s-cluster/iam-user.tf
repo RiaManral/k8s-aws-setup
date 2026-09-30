@@ -21,6 +21,6 @@ resource "aws_iam_access_key" "access_key" {
 # }
 
 output "iam_user_secret_access_key" {
-  value = aws_iam_access_key.access_key.secret
+  value     = aws_iam_access_key.access_key.secret
   sensitive = true
 }
