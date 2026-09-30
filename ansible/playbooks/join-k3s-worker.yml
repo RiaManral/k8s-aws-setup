@@ -1,0 +1,15 @@
+---
+- name: Join worker to k3s cluster
+  hosts: role_worker
+  become: true
+  vars:
+    master_ip: "{{ hostvars[groups['role_master'][0]]['ansible_host'] }}"
+  tasks:
+    - name: Install k3s and join cluster
+      shell: >
+        curl -sfL https://get.k3s.io |
+        K3S_URL=https://{{ master_ip }}:6443
+        K3S_TOKEN={{ hostvars[groups['role_master'][0]]['k3s_token'] }}
+        sh -
+      args:
+        creates: /usr/local/bin/k3s

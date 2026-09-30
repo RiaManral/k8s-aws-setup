@@ -1,0 +1,3 @@
+---
+- import_playbook: install-k3s-master.yml
+- import_playbook: join-k3s-worker.yml
